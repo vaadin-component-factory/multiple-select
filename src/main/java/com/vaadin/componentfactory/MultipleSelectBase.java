@@ -417,8 +417,8 @@ public abstract class MultipleSelectBase<C extends MultipleSelectBase<C, T, V>, 
     /**
      * Constructs a new MultipleSelectBase component with the given arguments.
      *
-     * @param initialValue
-     *            the initial value to set to the value
+     * @param propertyName
+     *            the name of the element property to use
      * @param defaultValue
      *            the default value to use if the value isn't defined
      * @param elementPropertyType
