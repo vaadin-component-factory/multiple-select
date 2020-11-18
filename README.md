@@ -1,30 +1,41 @@
-# Paper Slider
+# Multiple Select
 
-Vaadin 14 Java integration of @vaadin-component-factory/vcf-multi-select
+This component is an extended version of Vaadin Select supporting multiple-items selection. It is the Vaadin 14 Java integration of @vaadin-component-factory/vcf-multi-select.
 
-## Development instructions
+## Install
 
-JavaScript modules can either be published as an NPM package or be kept as local 
-files in your project. The local JavaScript modules should be put in 
-`src/main/resources/META-INF/frontend` so that they are automatically found and 
-used in the using application.
+To use the component in an application using maven, add the following dependency to your pom.xml:
 
-If the modules are published then the package should be noted in the component 
-using the `@NpmPackage` annotation in addition to using `@JsModule` annotation.
-
-
-Starting the test/demo server:
-1. Run `mvn jetty:run`.
-2. Open http://localhost:8080 in the browser.
-
-## Publishing to Vaadin Directory
-
-You can create the zip package needed for [Vaadin Directory](https://vaadin.com/directory/) using
 ```
-mvn versions:set -DnewVersion=1.0.0 # You cannot publish snapshot versions 
-mvn install -Pdirectory
+<dependency>
+    <groupId>com.vaadin.componentfactory</groupId>
+    <artifactId>multiple-select</artifactId>
+    <version>${component.version}</version>
+</dependency>
 ```
 
-The package is created as `target/vcf-multi-select-1.0.0.zip`
+## Usage
 
-For more information or to upload the package, visit https://vaadin.com/directory/my-components?uploadNewComponent
+The component is intended to be used in the same way as Vaadin Select. For example,
+
+```
+MultipleSelect<String> labelSelect = new MultipleSelect<>();
+labelSelect.setItems("Option one", "Option two");
+labelSelect.setLabel("Label");
+
+MultipleSelect<String> placeholderSelect = new MultipleSelect<>();
+placeholderSelect.setItems("Option one", "Option two");
+placeholderSelect.setPlaceholder("Placeholder");
+
+MultipleSelect<String> valueSelect = new MultipleSelect<>();
+valueSelect.setItems("Value", "Option one", "Option two");
+valueSelect.setValue("Value");
+
+add(labelSelect, placeholderSelect, valueSelect);
+```
+
+
+
+## Licnese
+
+Apache License 2
