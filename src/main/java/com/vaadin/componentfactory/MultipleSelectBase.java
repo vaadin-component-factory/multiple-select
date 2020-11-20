@@ -16,7 +16,7 @@ import com.vaadin.flow.shared.Registration;
 
 @Tag("vcf-multi-select")
 @JavaScript("@vaadin-component-factory/vcf-multi-select/src/vcf-multi-select.js")
-@NpmPackage(value = "@vaadin-component-factory/vcf-multi-select", version = "^1.0.6")
+@NpmPackage(value = "@vaadin-component-factory/vcf-multi-select", version = "^1.0.8")
 public abstract class MultipleSelectBase<C extends MultipleSelectBase<C, T, V>, T, V>
         extends AbstractSinglePropertyField<C, V>
         implements HasStyle, Focusable<C> {
