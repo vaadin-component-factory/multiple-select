@@ -148,6 +148,8 @@ public class MultipleSelect<T>
     private String emptySelectionCaption;
 
     private VaadinItem<T> emptySelectionItem;
+    private String singularString;
+    private String pluralString;
 
     /**
      * Constructs a select with the given items.
@@ -356,6 +358,39 @@ public class MultipleSelect<T>
     @Override
     public void setPlaceholder(String placeholder) {
         super.setPlaceholder(placeholder);
+    }
+
+    /**
+     * <p>
+     * Gets the texts shown after the count when more than a single item is
+     * selected.
+     * </p>
+     *
+     * @return an array of two Strings: the first of which represents the text
+     *         shown when only on extra item is selected. The second represents
+     *         the text shown when two or more extra items selected.
+     */
+    protected String[] getExtraItemsCountText() {
+        return new String[] { singularString, pluralString };
+    }
+
+    /**
+     * <p>
+     * Sets the text shown after the count when more than a single item is
+     * selected.
+     * </p>
+     *
+     * @param singularString
+     *            the text shown when only on extra item is selected.
+     * @param pluralString
+     *            the text shown when two or more extra items selected.
+     */
+    @Override
+    protected void setExtraItemsCountText(String singularString,
+            String pluralString) {
+        super.setExtraItemsCountText(singularString, pluralString);
+        this.singularString = singularString;
+        this.pluralString = pluralString;
     }
 
     /**

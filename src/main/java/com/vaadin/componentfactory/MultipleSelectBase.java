@@ -16,7 +16,7 @@ import com.vaadin.flow.shared.Registration;
 
 @Tag("vcf-multi-select")
 @JavaScript("@vaadin-component-factory/vcf-multi-select/src/vcf-multi-select.js")
-@NpmPackage(value = "@vaadin-component-factory/vcf-multi-select", version = "^1.0.8")
+@NpmPackage(value = "@vaadin-component-factory/vcf-multi-select", version = "^1.1.0")
 public abstract class MultipleSelectBase<C extends MultipleSelectBase<C, T, V>, T, V>
         extends AbstractSinglePropertyField<C, V>
         implements HasStyle, Focusable<C> {
@@ -290,6 +290,20 @@ public abstract class MultipleSelectBase<C extends MultipleSelectBase<C, T, V>, 
      */
     protected void setReadonly(boolean readonly) {
         getElement().setProperty("readonly", readonly);
+    }
+    
+    /**
+     * <p>
+     * Sets the text shown after the count when more than a single item is selected.
+     * </p>
+     *
+     * @param singularString
+     *            the text shown when only on extra item is selected.
+     * @param pluralString
+     *            the text shown when two or more extra items selected.
+     */
+    protected void setExtraItemsCountText(String singularString, String pluralString) {
+        getElement().executeJs("this.setExtraItemsCountText($0, $1);", singularString, pluralString);
     }
 
     /**
