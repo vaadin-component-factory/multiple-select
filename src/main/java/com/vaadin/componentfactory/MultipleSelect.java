@@ -370,7 +370,7 @@ public class MultipleSelect<T>
      *         shown when only on extra item is selected. The second represents
      *         the text shown when two or more extra items selected.
      */
-    protected String[] getExtraItemsCountText() {
+    public String[] getExtraItemsCountText() {
         return new String[] { singularString, pluralString };
     }
 
@@ -386,7 +386,7 @@ public class MultipleSelect<T>
      *            the text shown when two or more extra items selected.
      */
     @Override
-    protected void setExtraItemsCountText(String singularString,
+    public void setExtraItemsCountText(String singularString,
             String pluralString) {
         super.setExtraItemsCountText(singularString, pluralString);
         this.singularString = singularString;
