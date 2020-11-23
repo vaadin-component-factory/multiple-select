@@ -16,7 +16,6 @@ import java.util.stream.Stream;
 import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.HasComponents;
-import com.vaadin.flow.component.HasHelper;
 import com.vaadin.flow.component.HasSize;
 import com.vaadin.flow.component.HasValidation;
 import com.vaadin.flow.component.ItemLabelGenerator;
@@ -47,7 +46,7 @@ import elemental.json.JsonArray;
 public class MultipleSelect<T>
         extends MultipleSelectBase<MultipleSelect<T>, T, Set<T>>
         implements MultiSelect<MultipleSelect<T>, T>, HasDataProvider<T>,
-        HasItemsAndComponents<T>, HasSize, HasValidation, HasHelper {
+        HasItemsAndComponents<T>, HasSize, HasValidation {
 
     public static final String LABEL_ATTRIBUTE = "label";
     private List<T> items;

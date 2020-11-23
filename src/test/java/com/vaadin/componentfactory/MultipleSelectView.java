@@ -12,7 +12,6 @@ public class MultipleSelectView extends Div {
 
         multipleSelect.setLabel("MultipleSelect");
         multipleSelect.setPlaceholder("Select multiple items");
-        multipleSelect.setHelperText("Some helper text");
         multipleSelect.setWidth("25%");
 
         add(multipleSelect);
