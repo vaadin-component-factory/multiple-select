@@ -393,7 +393,7 @@ public class MultipleSelect<T>
      *
      * @param displayAllSelected
      *            the boolean value to set
-     * @see #setExtraItemsCountText()
+     * @see #setExtraItemsCountText(String singularString, String pluralString)
      */
     @Override
     public void setDisplayAllSelected(boolean displayAllSelected) {

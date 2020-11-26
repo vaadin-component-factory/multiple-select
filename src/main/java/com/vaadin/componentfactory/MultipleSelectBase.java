@@ -323,7 +323,7 @@ public abstract class MultipleSelectBase<C extends MultipleSelectBase<C, T, V>, 
      *
      * @param displayAllSelected
      *            the boolean value to set
-     * @see #setExtraItemsCountText()
+     * @see #setExtraItemsCountText(String singularString, String pluralString)
      */
     protected void setDisplayAllSelected(boolean displayAllSelected) {
         getElement().setProperty("displayAllSelected", displayAllSelected);
