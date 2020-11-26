@@ -45,7 +45,7 @@
     "@vaadin/vaadin-material-styles": "1.3.2",
     "@vaadin/vaadin-rich-text-editor": "1.3.0",
     "lit-element": "2.3.1",
-    "@vaadin-component-factory/vcf-multi-select": "^1.1.0",
+    "@vaadin-component-factory/vcf-multi-select": "^1.2.0",
     "@vaadin/router": "1.7.2",
     "@vaadin/flow-frontend": "./target/flow-frontend",
     "@vaadin/form": "./target/flow-frontend/form"
@@ -117,7 +117,7 @@
       "@vaadin/vaadin-material-styles": "1.3.2",
       "@vaadin/vaadin-rich-text-editor": "1.3.0",
       "lit-element": "2.3.1",
-      "@vaadin-component-factory/vcf-multi-select": "^1.1.0",
+      "@vaadin-component-factory/vcf-multi-select": "^1.2.0",
       "@vaadin/router": "1.7.2"
     },
     "devDependencies": {
@@ -140,6 +140,6 @@
       "html-webpack-plugin": "3.2.0",
       "typescript": "3.8.3"
     },
-    "hash": "384fb24eb9e77c2305fc59111785d3df63f12b90905d801d8dda863bd2a91051"
+    "hash": "7936eb371aafa60042cabc6b8098473000a37d8c272aa0ea5aec41f330f18e32"
   }
 }

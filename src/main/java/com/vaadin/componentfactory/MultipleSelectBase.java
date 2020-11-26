@@ -16,11 +16,10 @@ import com.vaadin.flow.shared.Registration;
 
 @Tag("vcf-multi-select")
 @JavaScript("@vaadin-component-factory/vcf-multi-select/src/vcf-multi-select.js")
-@NpmPackage(value = "@vaadin-component-factory/vcf-multi-select", version = "^1.1.0")
+@NpmPackage(value = "@vaadin-component-factory/vcf-multi-select", version = "^1.2.0")
 public abstract class MultipleSelectBase<C extends MultipleSelectBase<C, T, V>, T, V>
         extends AbstractSinglePropertyField<C, V>
         implements HasStyle, Focusable<C> {
-
 
     /**
      * <p>
@@ -291,19 +290,61 @@ public abstract class MultipleSelectBase<C extends MultipleSelectBase<C, T, V>, 
     protected void setReadonly(boolean readonly) {
         getElement().setProperty("readonly", readonly);
     }
-    
+
     /**
      * <p>
-     * Sets the text shown after the count when more than a single item is selected.
+     * When true, it indicates that all selected items will be shown
+     * comma-separated (with ellipsis if more items are present than fits the
+     * component).
+     * <p>
+     * If false, it indicates that after the first selected item, additional
+     * selected items will be abbreviated (showing only the number of
+     * additionally selected items between brackets).
+     * <p>
+     * This property is not synchronized automatically from the client side, so
+     * the returned value may not be the same as in client side.
+     * </p>
+     *
+     * @return the {@code displayAllSelected} property from the webcomponent
+     */
+    protected boolean isDisplayAllSelected() {
+        return getElement().getProperty("displayAllSelected", false);
+    }
+
+    /**
+     * <p>
+     * If set to true, all selected items will be shown comma-separated (with
+     * ellipsis if more items are present than fits the component).
+     *
+     * When set to false (default), it indicates that after the first selected
+     * item, additional selected items will be abbreviated (showing only the
+     * number of additionally selected items between brackets).
+     * </p>
+     *
+     * @param displayAllSelected
+     *            the boolean value to set
+     * @see #setExtraItemsCountText()
+     */
+    protected void setDisplayAllSelected(boolean displayAllSelected) {
+        getElement().setProperty("displayAllSelected", displayAllSelected);
+    }
+
+    /**
+     * <p>
+     * Sets the text shown after the count when more than a single item is
+     * selected.
      * </p>
      *
      * @param singularString
      *            the text shown when only on extra item is selected.
      * @param pluralString
      *            the text shown when two or more extra items selected.
+     * @see #setDisplayAllSelected(boolean displayAllSelected)
      */
-    protected void setExtraItemsCountText(String singularString, String pluralString) {
-        getElement().executeJs("this.setExtraItemsCountText($0, $1);", singularString, pluralString);
+    protected void setExtraItemsCountText(String singularString,
+            String pluralString) {
+        getElement().executeJs("this.setExtraItemsCountText($0, $1);",
+                singularString, pluralString);
     }
 
     /**
@@ -444,16 +485,12 @@ public abstract class MultipleSelectBase<C extends MultipleSelectBase<C, T, V>, 
      * @param <P>
      *            the property type
      */
-    public <P> MultipleSelectBase(String propertyName,
-            V defaultValue, Class<P> elementPropertyType,
+    public <P> MultipleSelectBase(String propertyName, V defaultValue,
+            Class<P> elementPropertyType,
             SerializableBiFunction<C, P, V> presentationToModel,
             SerializableBiFunction<C, V, P> modelToPresentation) {
         super(propertyName, defaultValue, elementPropertyType,
                 presentationToModel, modelToPresentation);
     }
-
-
-
-
 
 }
