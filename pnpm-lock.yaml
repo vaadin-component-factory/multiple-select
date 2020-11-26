@@ -2,7 +2,7 @@ dependencies:
   '@polymer/iron-icon': 3.0.1
   '@polymer/iron-list': 3.1.0
   '@polymer/polymer': 3.2.0
-  '@vaadin-component-factory/vcf-multi-select': 1.1.0
+  '@vaadin-component-factory/vcf-multi-select': 1.2.0
   '@vaadin/flow-frontend': 'link:target/flow-frontend'
   '@vaadin/form': 'link:target/flow-frontend/form'
   '@vaadin/router': 1.7.2
@@ -1146,7 +1146,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-GKF2VnEkMmEeEGvoo03ocrP9ySMuX1ypKazIYMlsjfslfBMhOAtC5dmEWKdJioW4lJN7MZRS88kalTsVClyQ9w==
-  /@vaadin-component-factory/vcf-multi-select/1.1.0:
+  /@vaadin-component-factory/vcf-multi-select/1.2.0:
     dependencies:
       '@polymer/iron-media-query': 3.0.1
       '@polymer/iron-resizable-behavior': 3.0.1
@@ -1164,7 +1164,7 @@ packages:
       '@vaadin/vaadin-themable-mixin': 1.6.1
     dev: false
     resolution:
-      integrity: sha512-osty50jPz1na7atf+/uZrL37vUF8grBEGQgwHlFOmFRV8oR4vN3YXruShpAUrg/iXEG19IQ8nH7EkRw1sE4hAA==
+      integrity: sha512-4atEGErnCQXsOOVB5pajM0+6kmGTdrj/lU1AK5Sy/kT1bHqrBK9hDYE9jTNKlCJ9QQ+WY0PESQWSNCSy8qdeqQ==
   /@vaadin/router/1.7.2:
     dependencies:
       '@vaadin/vaadin-usage-statistics': 2.1.0
@@ -6794,7 +6794,7 @@ specifiers:
   '@polymer/iron-list': 3.1.0
   '@polymer/polymer': 3.2.0
   '@types/validator': 10.11.3
-  '@vaadin-component-factory/vcf-multi-select': ^1.1.0
+  '@vaadin-component-factory/vcf-multi-select': ^1.2.0
   '@vaadin/flow-frontend': ./target/flow-frontend
   '@vaadin/form': ./target/flow-frontend/form
   '@vaadin/router': 1.7.2
