@@ -18,6 +18,7 @@ public class MultipleSelectView extends VerticalLayout {
 
         multipleSelect.setLabel("MultipleSelect");
         multipleSelect.setPlaceholder("Select multiple items");
+        multipleSelect.setHelperText("Some helper text");
         multipleSelect.setWidth("200px");
 
         add(multipleSelect);
