@@ -24,7 +24,6 @@ import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.data.binder.HasDataProvider;
-import com.vaadin.flow.data.binder.HasItemComponents;
 import com.vaadin.flow.data.binder.HasItemsAndComponents;
 import com.vaadin.flow.data.provider.DataChangeEvent;
 import com.vaadin.flow.data.provider.DataProvider;
@@ -48,7 +47,7 @@ import elemental.json.JsonArray;
 public class MultipleSelect<T>
         extends MultipleSelectBase<MultipleSelect<T>, T, Set<T>>
         implements MultiSelect<MultipleSelect<T>, T>, HasDataProvider<T>,
-        HasItemComponents<T>, HasSize, HasValidation, HasHelper {
+        HasItemsAndComponents<T>, HasSize, HasValidation, HasHelper {
 
     public static final String LABEL_ATTRIBUTE = "label";
     private List<T> items;
@@ -590,7 +589,7 @@ public class MultipleSelect<T>
         Objects.requireNonNull(components, "Components should not be null");
         for (Component component : components) {
             if (component.getElement().hasAttribute("slot")) {
-                HasItemComponents.super.add(component);
+                HasItemsAndComponents.super.add(component);
             } else {
                 listBox.add(component);
             }
@@ -618,7 +617,7 @@ public class MultipleSelect<T>
     public void addComponentAtIndex(int index, Component component) {
         Objects.requireNonNull(component, "Component should not be null");
         if (component.getElement().hasAttribute("slot")) {
-            HasItemComponents.super.addComponentAtIndex(index, component);
+            HasItemsAndComponents.super.addComponentAtIndex(index, component);
         } else {
             listBox.addComponentAtIndex(index, component);
         }
@@ -635,7 +634,7 @@ public class MultipleSelect<T>
     public void addComponentAsFirst(Component component) {
         Objects.requireNonNull(component, "Component should not be null");
         if (component.getElement().hasAttribute("slot")) {
-            HasItemComponents.super.addComponentAsFirst(component);
+            HasItemsAndComponents.super.addComponentAsFirst(component);
         } else {
             listBox.addComponentAsFirst(component);
         }
