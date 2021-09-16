@@ -213,6 +213,18 @@ public class MultipleSelect<T>
         Objects.requireNonNull(itemLabelGenerator);
         setRenderer(new TextRenderer<>(itemLabelGenerator));
     }
+     
+     /**
+     * Sets the theme names of <vaadin-item> component. This method overwrites any
+     * previous set theme names. To be used after setItems().
+     *
+     * @param themeName
+     *            a space-separated string of theme names to set, or empty
+     *            string to remove all theme names
+     */
+    public void setItemThemeName(String themeName) {
+        getItems().forEach(e -> e.getElement().setAttribute("theme", themeName));
+    }
 
     /**
      * Sets whether the user is allowed to select nothing. When set {@code true}
